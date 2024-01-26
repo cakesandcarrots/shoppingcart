@@ -1,0 +1,56 @@
+.Title{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.shoes{
+    margin: 0.5%;
+height: 30rem;
+width: 48vw;
+}
+
+.clothes{
+    margin: 0.5%;
+height: 30rem;
+width: 48vw;
+
+}
+
+.extra{
+margin: 0.5%;
+height: 40rem;
+width: 97vw;
+
+}
+
+.nav{
+    display: flex;
+    list-style: none;
+justify-content: space-around;    
+    background-color: red;
+
+}
+
+.nav ul{
+    width: 100vw;
+    margin: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+background-color: green;
+    list-style: none;
+    display: flex;
+    justify-content:space-evenly;
+    gap:2rem;
+
+}
+
+.nav ul li{
+    background-color: turquoise;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.nav ul li:hover {
+background-color: red;
+}
