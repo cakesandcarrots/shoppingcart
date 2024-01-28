@@ -54,3 +54,17 @@ background-color: green;
 .nav ul li:hover {
 background-color: red;
 }
+
+.productWrapper{
+    list-style: none;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    
+}
+.cards{
+    height: 25rem;
+    width:25rem;
+}
