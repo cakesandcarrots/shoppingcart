@@ -31,8 +31,7 @@ export default function Storepage({ ordereditem }) {
             <img className="cards" src={image.image} alt="" />
             <div className="inputwrapper">
               <input
-
-              key={image.id}
+                key={image.id}
                 className="inputfield"
                 type="number"
                 min="1"
@@ -40,10 +39,12 @@ export default function Storepage({ ordereditem }) {
                   setQuantity(e.target.value);
                 }}
               />
-              <button className="addtocart" onClick={() => {handleclick(image)
-              
-              
-              }}>
+              <button
+                className="addtocart"
+                onClick={() => {
+                  handleclick(image);
+                }}
+              >
                 Add to cart
               </button>
             </div>

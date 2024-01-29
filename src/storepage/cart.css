@@ -1,16 +1,16 @@
-.tabledata{
+.tabledata {
     display: flex;
     flex-direction: column;
 
 }
 
-.itemimage{
+.itemimage {
     height: 10rem;
     width: 10rem;
-  
+
 }
 
-.headers{
+.headers {
     height: 100%;
     width: 100%;
     display: flex;
@@ -19,11 +19,11 @@
 }
 
 
-thead{
+thead {
     display: flex;
 }
 
-.rows{
+.rows {
     display: flex;
     justify-content: center;
     gap: 2rem;

@@ -7,22 +7,15 @@ import Storepage from "./storepage/Storepage";
 import Cart from "./storepage/Cart";
 import "./App.css";
 function App() {
-
-  
   const [items, setItems] = useState([]);
-function handleclick(newitem){
-  console.log(newitem)
-  setItems([...items,newitem])
-}
+  function handleclick(newitem) {
+    setItems([...items, newitem]);
+  }
 
-
-
-function delitem(delid){
-  const updateditems =  items.filter((item)=>item.id!=delid)
-   setItems(updateditems)
- }
-
-
+  function delitem(delid) {
+    const updateditems = items.filter((item) => item.id != delid);
+    setItems(updateditems);
+  }
 
   return (
     <>
@@ -44,8 +37,14 @@ function delitem(delid){
       </nav>
       <Routes>
         <Route path="/Homepage" element={<Homepage></Homepage>}></Route>
-        <Route path="/Storepage" element={<Storepage ordereditem={handleclick}></Storepage>}></Route>
-        <Route path="/Cart" element={<Cart delitemfunc={delitem} itemsarray = {items}  ></Cart>}></Route>
+        <Route
+          path="/Storepage"
+          element={<Storepage ordereditem={handleclick}></Storepage>}
+        ></Route>
+        <Route
+          path="/Cart"
+          element={<Cart delitemfunc={delitem} itemsarray={items}></Cart>}
+        ></Route>
       </Routes>
     </>
   );
