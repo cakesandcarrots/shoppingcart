@@ -23,26 +23,26 @@ function App() {
       <nav className="nav">
         <ul>
           <li className="active">
-            <Link to="/Homepage">Home</Link>
+            <Link to="Homepage">Home</Link>
           </li>
           <li>
-            <Link to="/Storepage">Store</Link>
+            <Link to="Storepage">Store</Link>
           </li>
           <li>
-            <Link to="/Cart">
+            <Link to="Cart">
               <img className="cartimage" src="src/assets/cart.svg" alt="" />
             </Link>
           </li>
         </ul>
       </nav>
       <Routes>
-        <Route path="/Homepage" element={<Homepage></Homepage>}></Route>
+        <Route path="Homepage" element={<Homepage></Homepage>}></Route>
         <Route
-          path="/Storepage"
+          path="Storepage"
           element={<Storepage ordereditem={handleclick}></Storepage>}
         ></Route>
         <Route
-          path="/Cart"
+          path="Cart"
           element={<Cart delitemfunc={delitem} itemsarray={items}></Cart>}
         ></Route>
       </Routes>
