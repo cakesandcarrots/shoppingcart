@@ -5,6 +5,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import Homepage from "./homepage/Homepage";
 import Storepage from "./storepage/Storepage";
 import Cart from "./storepage/Cart";
+import cartlogo from "./assets/cart.svg"
+
 import "./App.css";
 function App() {
   const [items, setItems] = useState([]);
@@ -30,7 +32,7 @@ function App() {
           </li>
           <li>
             <Link to="Cart">
-              <img className="cartimage" src="src/assets/cart.svg" alt="" />
+              <img className="cartimage" src={cartlogo} alt="" />
             </Link>
           </li>
         </ul>
