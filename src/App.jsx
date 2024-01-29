@@ -7,6 +7,23 @@ import Storepage from "./storepage/Storepage";
 import Cart from "./storepage/Cart";
 import "./App.css";
 function App() {
+
+  
+  const [items, setItems] = useState([]);
+function handleclick(newitem){
+  console.log(newitem)
+  setItems([...items,newitem])
+}
+
+
+
+function delitem(delid){
+  const updateditems =  items.filter((item)=>item.id!=delid)
+   setItems(updateditems)
+ }
+
+
+
   return (
     <>
       <h1 className="Title">Welcome to Shopping Site</h1>
@@ -27,8 +44,8 @@ function App() {
       </nav>
       <Routes>
         <Route path="/Homepage" element={<Homepage></Homepage>}></Route>
-        <Route path="/Storepage" element={<Storepage></Storepage>}></Route>
-        <Route path="/Cart" element={<Cart></Cart>}></Route>
+        <Route path="/Storepage" element={<Storepage ordereditem={handleclick}></Storepage>}></Route>
+        <Route path="/Cart" element={<Cart delitemfunc={delitem} itemsarray = {items}  ></Cart>}></Route>
       </Routes>
     </>
   );
