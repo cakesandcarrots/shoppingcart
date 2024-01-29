@@ -1,70 +1,59 @@
-.Title{
+.Title {
     display: flex;
     justify-content: center;
     margin: 1rem;
 }
 
-.shoes{
+.shoes {
     margin: 0.5%;
-height: 30rem;
-width: 48vw;
+    height: 30rem;
+    width: 48vw;
 }
 
-.clothes{
+.clothes {
     margin: 0.5%;
-height: 30rem;
-width: 48vw;
+    height: 30rem;
+    width: 48vw;
 
 }
 
-.extra{
-margin: 0.5%;
-height: 40rem;
-width: 97vw;
-
-}
-
-.nav{
+.perproduct {
     display: flex;
-    list-style: none;
-justify-content: space-around;    
-    background-color: red;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+
+.inputfield {
+    width: 80%;
+    align-self: center;
+}
+
+.extra {
+    margin: 0.5%;
+    height: 40rem;
+    width: 97vw;
 
 }
 
-.nav ul{
-    width: 100vw;
-    margin: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-background-color: green;
-    list-style: none;
-    display: flex;
-    justify-content:space-evenly;
-    gap:2rem;
 
-}
-
-.nav ul li{
-    background-color: turquoise;
-    padding-left: 5rem;
-    padding-right: 5rem;
-}
-
-.nav ul li:hover {
-background-color: red;
-}
-
-.productWrapper{
+.productWrapper {
     list-style: none;
     display: flex;
     flex: 1;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
-    
+
 }
-.cards{
+
+.cards {
     height: 25rem;
-    width:25rem;
+    width: 25rem;
+}
+
+
+.inputwrapper {
+    display: flex;
 }

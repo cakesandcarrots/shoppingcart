@@ -4,7 +4,8 @@ import viteLogo from "/vite.svg";
 import { Link, Route, Routes } from "react-router-dom";
 import Homepage from "./homepage/Homepage";
 import Storepage from "./storepage/Storepage";
-
+import Cart from "./storepage/Cart";
+import "./App.css";
 function App() {
   return (
     <>
@@ -17,11 +18,17 @@ function App() {
           <li>
             <Link to="/Storepage">Store</Link>
           </li>
+          <li>
+            <Link to="/Cart">
+              <img className="cartimage" src="src/assets/cart.svg" alt="" />
+            </Link>
+          </li>
         </ul>
       </nav>
       <Routes>
         <Route path="/Homepage" element={<Homepage></Homepage>}></Route>
         <Route path="/Storepage" element={<Storepage></Storepage>}></Route>
+        <Route path="/Cart" element={<Cart></Cart>}></Route>
       </Routes>
     </>
   );
