@@ -15,10 +15,10 @@ export default function Cart({ delitemfunc, itemsarray }) {
       <table className="tabledata">
         <thead >
           <tr className="headers">
-            <th >Image</th>
-            <th >Category</th>
-            <th>Quantity</th>
-            <th>Remove</th>
+            <th className="image" >Image</th>
+            <th className="category" >Category</th>
+            <th className="quantity">Quantity</th>
+            <th className="remove">Remove</th>
           </tr>
         </thead>
 

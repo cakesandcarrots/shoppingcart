@@ -1,8 +1,19 @@
 .billcontainer{
-    flex:1;
+    flex:0.5;
     padding: 1rem;
 }
 
 .bill{
     text-align: center;
+    font-family: "Work Sans", sans-serif;
+    font-size:xx-large;
+    font-weight: bold;
+}
+
+.image{
+    width: 45%;
+}
+
+.quantity{
+    width: 25%;
 }

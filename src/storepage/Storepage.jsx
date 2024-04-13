@@ -31,6 +31,10 @@ export default function Storepage({ ordereditem }) {
       image.quantity = quantity;
       ordereditem(image);
     }
+    else{
+      alert("No negative values allowed")
+      
+    }
   }
 
   return (

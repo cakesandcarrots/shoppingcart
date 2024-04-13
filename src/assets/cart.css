@@ -4,16 +4,16 @@
 }
 
 .tabledata {
-    flex: 1;
+    flex: 1.5;
     display: flex;
     flex-direction: column;
+    border-radius: 12px;
+    margin: 1rem;
     padding: 1rem;
-    
-
+    background-color: grey;
 }
 thead{
     display: flex;
-    justify-content: center;
 }
 
 .itemimage {
@@ -24,21 +24,24 @@ thead{
 }
 
 .headers {
-    height: 100%;
-    width: 60%;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 5rem;
 }
 
 
 thead {
     display: flex;
 }
+td{
+    align-self: center;
+}
 
 .rows {
     display: flex;
+    background-color: rgb(98, 93, 93);
+    margin-top: 1rem;
+    border-radius: 12px;
     justify-content: center;
-    padding-top: 1rem;
-    gap: 4rem;
+    padding: 0.5rem;
+    gap: 7rem;
 }
