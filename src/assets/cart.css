@@ -1,18 +1,31 @@
+.cartmainstructure{
+    display: flex;
+    gap: 1rem;
+}
+
 .tabledata {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+    
 
+}
+thead{
+    display: flex;
+    justify-content: center;
 }
 
 .itemimage {
     height: 10rem;
     width: 10rem;
+    margin-right: 2rem;
 
 }
 
 .headers {
     height: 100%;
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: center;
     gap: 5rem;
@@ -26,5 +39,6 @@ thead {
 .rows {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    padding-top: 1rem;
+    gap: 4rem;
 }

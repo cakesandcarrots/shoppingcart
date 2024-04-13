@@ -1,21 +1,31 @@
 import { useEffect, useState } from "react";
-import Cart from "./Cart";
 export default function Storepage({ ordereditem }) {
-  const [products, setProduct] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(0);
+
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
+    const controller = new AbortController();
+    const signal = controller.signal;
+    
+    fetch("https://fakestoreapi.com/products", { signal })
+      .then((res) => {
+        return res.json();
+      })
       .then((json) => {
-        setProduct(json);
+        setProducts(json);
         setLoading(false);
       });
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   if (loading) {
     return <h1>Loading...</h1>;
   }
+
+
   function handleclick(image) {
     if (quantity > 0) {
       image.quantity = quantity;

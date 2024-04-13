@@ -1,4 +1,5 @@
-import "./Homepage.css";
+import "../assets/Homepage.css"
+import { Link } from "react-router-dom";
 function Homepage() {
   return (
     <>
@@ -8,6 +9,7 @@ function Homepage() {
             className="clothes"
             src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="clothes image"
+            
           />
           <img
             className="shoes"

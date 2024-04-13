@@ -1,13 +1,11 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import { Link, Route, Routes } from "react-router-dom";
 import Homepage from "./homepage/Homepage";
 import Storepage from "./storepage/Storepage";
 import Cart from "./storepage/Cart";
-import cartlogo from "./assets/cart.svg"
+import cartlogo from "./assets/cart.svg";
+import "./assets/App.css";
 
-import "./App.css";
 function App() {
   const [items, setItems] = useState([]);
   function handleclick(newitem) {

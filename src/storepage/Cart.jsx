@@ -1,5 +1,5 @@
-import "./cart.css";
-
+import "../assets/cart.css";
+import Bill from "./Bill";
 export default function Cart({ delitemfunc, itemsarray }) {
   function handledelete(id) {
     delitemfunc(id);
@@ -10,11 +10,13 @@ export default function Cart({ delitemfunc, itemsarray }) {
   }
   return (
     <>
+
+    <div className="cartmainstructure">    
       <table className="tabledata">
-        <thead>
+        <thead >
           <tr className="headers">
-            <th>Image</th>
-            <th>Category</th>
+            <th >Image</th>
+            <th >Category</th>
             <th>Quantity</th>
             <th>Remove</th>
           </tr>
@@ -23,10 +25,10 @@ export default function Cart({ delitemfunc, itemsarray }) {
         {itemsarray.map((item) => (
           <tr className="rows">
             <td>
-              <img className="itemimage" src={item.image} alt="" />
+              <img className="itemimage photos" src={item.image} alt="" />
             </td>
             <td>
-              <p>{item.category}</p>
+              <p className="category">{item.category}</p>
             </td>
             <td>
               <p>{item.quantity}</p>
@@ -37,6 +39,9 @@ export default function Cart({ delitemfunc, itemsarray }) {
           </tr>
         ))}
       </table>
+      <Bill></Bill>
+      </div>
+
     </>
   );
 }
