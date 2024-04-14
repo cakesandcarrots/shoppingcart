@@ -8,6 +8,12 @@ export default function Cart({ delitemfunc, itemsarray }) {
   if (itemsarray.length == 0) {
     return <h1> No Items in Cart </h1>;
   }
+let count =0
+  itemsarray.forEach(element => {
+    count = count + (element.price*element.quantity)
+  });
+
+
   return (
     <>
 
@@ -28,7 +34,7 @@ export default function Cart({ delitemfunc, itemsarray }) {
               <img className="itemimage photos" src={item.image} alt="" />
             </td>
             <td>
-              <p className="category">{item.category}</p>
+              <p className="category">{item.category.toUpperCase()}</p>
             </td>
             <td>
               <p>{item.quantity}</p>
@@ -39,7 +45,7 @@ export default function Cart({ delitemfunc, itemsarray }) {
           </tr>
         ))}
       </table>
-      <Bill></Bill>
+      <Bill cost = {count }></Bill>
       </div>
 
     </>
