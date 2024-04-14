@@ -28,11 +28,11 @@ export default function Storepage({ ordereditem }) {
 
   function handleclick(image) {
     if (quantity > 0) {
-      image.quantity = quantity;
+      image.quantity = Number( quantity);
       ordereditem(image);
     }
     else{
-      alert("No negative values allowed")
+      alert("Can't use invalid values")
       
     }
   }

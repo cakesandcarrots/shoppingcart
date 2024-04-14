@@ -6,15 +6,26 @@ import Cart from "./storepage/Cart";
 import cartlogo from "./assets/cart.svg";
 import "./assets/App.css";
 
+
 function App() {
   const [items, setItems] = useState([]);
   function handleclick(newitem) {
-    setItems([...items, newitem]);
+   let data =  items.find((item)=>item.id == newitem.id)
+   if(data ===undefined)
+   setItems([...items, newitem]);
+
+  else{
+    data.quantity = data.quantity + newitem.quantity
+  }
   }
 
   function delitem(delid) {
     const updateditems = items.filter((item) => item.id != delid);
     setItems(updateditems);
+  }
+
+  function clearitems (){
+    setItems([])
   }
 
   return (
@@ -43,8 +54,8 @@ function App() {
         ></Route>
         <Route
           path="Cart"
-          element={<Cart delitemfunc={delitem} itemsarray={items}></Cart>}
-        ></Route>
+          element={<Cart clearitems={clearitems} delitemfunc={delitem} itemsarray={items}></Cart>}
+          ></Route>
       </Routes>
     </>
   );

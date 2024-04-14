@@ -6,6 +6,8 @@
     margin: 1rem;
     margin-left: 0;
     max-height:25rem;
+    width: fit-content;
+    height: fit-content;
 }
 
 .bill{
@@ -49,4 +51,5 @@
     font-size: xx-large;
     border-radius: 12px;
     margin-left: 3rem;
+    margin-right: 4rem;
 }
