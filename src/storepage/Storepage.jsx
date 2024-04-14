@@ -30,6 +30,8 @@ export default function Storepage({ ordereditem }) {
     if (quantity > 0) {
       image.quantity = Number( quantity);
       ordereditem(image);
+      alert("Item Added successfully")
+
     }
     else{
       alert("Can't use invalid values")
@@ -44,6 +46,7 @@ export default function Storepage({ ordereditem }) {
           <li className="perproduct" key={image.id}>
             <img className="cards" src={image.image} alt="" />
             <div className="inputwrapper">
+              <p className="price">{image.price}$</p>
               <input
                 key={image.id}
                 className="inputfield"
@@ -55,7 +58,7 @@ export default function Storepage({ ordereditem }) {
               />
               <button
                 className="addtocart"
-                onClick={() => {
+                onClick={(e) => {
                   handleclick(image);
                 }}
               >

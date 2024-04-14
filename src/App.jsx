@@ -5,18 +5,16 @@ import Storepage from "./storepage/Storepage";
 import Cart from "./storepage/Cart";
 import cartlogo from "./assets/cart.svg";
 import "./assets/App.css";
-
+import { Navigate } from "react-router-dom";
 
 function App() {
   const [items, setItems] = useState([]);
   function handleclick(newitem) {
-   let data =  items.find((item)=>item.id == newitem.id)
-   if(data ===undefined)
-   setItems([...items, newitem]);
-
-  else{
-    data.quantity = data.quantity + newitem.quantity
-  }
+    let data = items.find((item) => item.id == newitem.id);
+    if (data === undefined) setItems([...items, newitem]);
+    else {
+      data.quantity = data.quantity + newitem.quantity;
+    }
   }
 
   function delitem(delid) {
@@ -24,8 +22,8 @@ function App() {
     setItems(updateditems);
   }
 
-  function clearitems (){
-    setItems([])
+  function clearitems() {
+    setItems([]);
   }
 
   return (
@@ -47,15 +45,22 @@ function App() {
         </ul>
       </nav>
       <Routes>
-        <Route path="Homepage" element={<Homepage></Homepage>}></Route>
+        <Route path="Homepage" exact element={<Homepage></Homepage>}></Route>
         <Route
           path="Storepage"
           element={<Storepage ordereditem={handleclick}></Storepage>}
         ></Route>
         <Route
           path="Cart"
-          element={<Cart clearitems={clearitems} delitemfunc={delitem} itemsarray={items}></Cart>}
-          ></Route>
+          element={
+            <Cart
+              clearitems={clearitems}
+              delitemfunc={delitem}
+              itemsarray={items}
+            ></Cart>
+          }
+        ></Route>
+        <Route path="*" element={<Navigate to="Homepage" />} />
       </Routes>
     </>
   );
