@@ -1,14 +1,6 @@
 import "../assets/cart.css";
 import Bill from "./Bill";
-import { transitions, positions, Provider as AlertProvider } from "react-alert";
-import AlertTemplate from "react-alert-template-basic";
 import Emptycart from "./Emptycart";
-const options = {
-  position: positions.TOP_CENTER,
-  timeout: 5000,
-  offset: "30px",
-  transition: transitions.SCALE,
-};
 export default function Cart({ delitemfunc, itemsarray,clearitems }) {
   function handledelete(id) {
     delitemfunc(id);
@@ -54,9 +46,7 @@ export default function Cart({ delitemfunc, itemsarray,clearitems }) {
             ))}
           </tbody>
         </table>
-        <AlertProvider template={AlertTemplate} {...options}>
           <Bill clearitems={clearitems}  cost={count}></Bill>
-        </AlertProvider>
       </div>
     </>
   );
