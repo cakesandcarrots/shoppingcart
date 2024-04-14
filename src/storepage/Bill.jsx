@@ -1,5 +1,4 @@
 import "../assets/bill.css";
-import { useAlert } from "react-alert";
 import { useEffect, useState } from "react";
 const Bill = ({ cost, clearitems }) => {
   const [value, setValue] = useState(Math.round(cost));
@@ -21,17 +20,16 @@ const Bill = ({ cost, clearitems }) => {
 
   let discount = Math.round((8 / 100) * value);
   let taxes = Math.round((14 / 100) * value);
-  const alert = useAlert();
   let check = 1;
 
   
 
   const handleclick = () => {
     if (check == 1 && cost != 0) {
-      alert.show("Thanks for Shopping");
+      alert("Thanks for Shopping");
       setCheckoutComplete(true)
     } else {
-      if (check == 1) alert.show("Buy an item for payment checkout");
+      if (check == 1) alert("Buy an item for payment checkout");
       check = 0;
     }
   };
