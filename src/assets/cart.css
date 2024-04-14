@@ -1,0 +1,53 @@
+.cartmainstructure{
+    display: flex;
+}
+
+.tabledata {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: grey;
+}
+thead{
+    display: flex;
+}
+
+.itemimage {
+    height: 10rem;
+    width: 10rem;
+    margin-right: 2rem;
+
+}
+
+.headers {
+    width: 100%;
+    display: flex;
+}
+
+
+thead {
+    display: flex;
+}
+td{
+    align-self: center;
+}
+
+.rows {
+    display: flex;
+    background-color: rgb(98, 93, 93);
+    margin-top: 1rem;
+    border-radius: 12px;
+    justify-content: center;
+    padding: 0.5rem;
+    gap: 7rem;
+}
+
+.emptybill{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

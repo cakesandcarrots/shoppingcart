@@ -1,25 +1,41 @@
 import { useEffect, useState } from "react";
-import Cart from "./Cart";
 export default function Storepage({ ordereditem }) {
-  const [products, setProduct] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(0);
+
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
+    const controller = new AbortController();
+    const signal = controller.signal;
+    
+    fetch("https://fakestoreapi.com/products", { signal })
+      .then((res) => {
+        return res.json();
+      })
       .then((json) => {
-        setProduct(json);
+        setProducts(json);
         setLoading(false);
       });
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   if (loading) {
     return <h1>Loading...</h1>;
   }
+
+
   function handleclick(image) {
     if (quantity > 0) {
-      image.quantity = quantity;
+      image.quantity = Number( quantity);
       ordereditem(image);
+      alert("Item Added successfully")
+
+    }
+    else{
+      alert("Can't use invalid values")
+      
     }
   }
 
@@ -30,6 +46,7 @@ export default function Storepage({ ordereditem }) {
           <li className="perproduct" key={image.id}>
             <img className="cards" src={image.image} alt="" />
             <div className="inputwrapper">
+              <p className="price">{image.price}$</p>
               <input
                 key={image.id}
                 className="inputfield"
@@ -41,7 +58,7 @@ export default function Storepage({ ordereditem }) {
               />
               <button
                 className="addtocart"
-                onClick={() => {
+                onClick={(e) => {
                   handleclick(image);
                 }}
               >
